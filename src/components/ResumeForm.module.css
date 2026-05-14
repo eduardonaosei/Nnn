@@ -1,0 +1,187 @@
+.form {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 36px 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  animation: fadeUp 0.45s ease both 0.1s;
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ── Photo ── */
+.photoSection {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.photoWrap {
+  position: relative;
+  width: 88px;
+  height: 88px;
+  border-radius: 50%;
+  overflow: hidden;
+  flex-shrink: 0;
+  cursor: pointer;
+  border: 2px dashed var(--border);
+  transition: border-color 0.2s;
+}
+
+.photoWrap:hover {
+  border-color: var(--gold);
+}
+
+.photoImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.photoPlaceholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: var(--input);
+  color: var(--muted);
+  font-size: 0.72rem;
+  gap: 2px;
+  transition: background 0.2s, color 0.2s;
+}
+
+.photoWrap:hover .photoPlaceholder {
+  background: #2e2e2e;
+  color: var(--gold);
+}
+
+.photoIcon {
+  font-size: 1.4rem;
+  line-height: 1;
+}
+
+.photoInput {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  cursor: pointer;
+  width: 100%;
+  height: 100%;
+}
+
+.removePhoto {
+  background: none;
+  border: 1px solid var(--border);
+  color: var(--text-secondary);
+  font-family: 'DM Sans', Arial, sans-serif;
+  font-size: 0.8rem;
+  padding: 6px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: border-color 0.2s, color 0.2s;
+}
+
+.removePhoto:hover {
+  border-color: var(--error);
+  color: var(--error);
+}
+
+/* ── Grid ── */
+.grid2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+@media (max-width: 560px) {
+  .grid2 { grid-template-columns: 1fr; }
+  .form { padding: 24px 18px; }
+}
+
+/* ── Field ── */
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.label {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+}
+
+.req {
+  color: var(--gold);
+  margin-left: 3px;
+}
+
+.input,
+.textarea {
+  padding: 12px 14px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: var(--input);
+  color: var(--text);
+  font-size: 0.95rem;
+  font-family: 'DM Sans', Arial, sans-serif;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  line-height: 1.5;
+}
+
+.input:focus,
+.textarea:focus {
+  outline: none;
+  border-color: var(--gold);
+  box-shadow: 0 0 0 3px rgba(245, 197, 66, 0.1);
+}
+
+.textarea {
+  resize: vertical;
+  min-height: 88px;
+}
+
+.hasError .input,
+.hasError .textarea {
+  border-color: var(--error);
+}
+
+.errorMsg {
+  font-size: 0.78rem;
+  color: var(--error);
+}
+
+/* ── Submit ── */
+.submit {
+  padding: 15px;
+  background: var(--gold);
+  color: #111;
+  border: none;
+  border-radius: 12px;
+  font-size: 1rem;
+  font-weight: 700;
+  font-family: 'DM Sans', Arial, sans-serif;
+  cursor: pointer;
+  letter-spacing: 0.5px;
+  transition: background 0.2s, transform 0.1s, box-shadow 0.2s;
+  margin-top: 4px;
+}
+
+.submit:hover {
+  background: var(--gold-light);
+  box-shadow: 0 4px 20px rgba(245, 197, 66, 0.3);
+}
+
+.submit:active {
+  transform: scale(0.98);
+}

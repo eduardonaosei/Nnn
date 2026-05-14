@@ -1,0 +1,52 @@
+.page {
+  min-height: 100vh;
+  padding: 40px 20px 60px;
+  background: radial-gradient(ellipse at top, #1c1700 0%, var(--bg) 60%);
+}
+
+.container {
+  max-width: 860px;
+  margin: 0 auto;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 40px;
+  animation: fadeDown 0.5s ease both;
+}
+
+.headerBadge {
+  display: inline-block;
+  background: rgba(245, 197, 66, 0.12);
+  color: var(--gold);
+  border: 1px solid rgba(245, 197, 66, 0.3);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  padding: 4px 12px;
+  border-radius: 20px;
+  margin-bottom: 14px;
+}
+
+.title {
+  font-family: 'DM Serif Display', serif;
+  font-size: clamp(1.8rem, 5vw, 2.6rem);
+  color: var(--gold);
+  letter-spacing: 0.5px;
+  margin-bottom: 10px;
+  line-height: 1.2;
+}
+
+.subtitle {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  max-width: 420px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+@keyframes fadeDown {
+  from { opacity: 0; transform: translateY(-16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
